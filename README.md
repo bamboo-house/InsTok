@@ -1,3 +1,3 @@
-# hackathon_app
+# hackathonproject
 テスト
 テスト２
