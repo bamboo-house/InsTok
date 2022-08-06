@@ -59,14 +59,14 @@ class InstagramHashtagSearch:
         return json.loads(response.text)["data"]
 
 # if __name__ == '__main__':
-#     obj = InstagramHashtagSearch("178c41454148257811","EAARn5vWZBORsBAB3MQHh9nGIroGZBZBKxS2ZCyNyiBoKetysVqnBmXzYnukNgLHkBOvkCNik8yXNjheU9mo9lckUC2Fsm9BUgOAkZAchXslN67dfYfxoUqFxtv7oiYDyqcwQGANcoYpCnwMtwkX3WLBtvMbOZC9BZBsZCZCAZBuBKPvJWoo7kZAgTf15GCKyIH9v0gZD")
+#     obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAB3MQHh9nGIroGZBZBKxS2ZCyNyiBoKetysVqnBmXzYnukNgLHkBOvkCNik8yXNjheU9mo9lckUC2Fsm9BUgOAkZAchXslN67dfYfxoUqFxtv7oiYDyqcwQGANcoYpCnwMtwkX3WLBtvMbOZC9BZBsZCZCAZBuBKPvJWoo7kZAgTf15GCKyIH9v0gZD")
 #     result1=obj.get_permalink_list("マキアート")
 #     result = obj.get_media_url_list("マキアート")
 
 #     print(result1)
 
 def result(q):
-    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBANriXqffS5V3sapCZANZAXaPPBZAeNSAfS9iz1LER9h4aCkpwCXC08vpFCZB6IHn3JY80WLuZAD5C4BHPP9eUAWVQnlxhxXqNuJf0QKZAragpfENBJTstNdKXbCy6VxZAUtDTA7a0WUEutNq2T7FXe7TrYjP8KKuoqPHwkkPY8w2r4Mj7Wu2HPL4kyST6Opf8IHrxZAztFi1")
+    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAMXaN1rwYZAWpzrcgUG1M0iuhwAtnDKR2R7KyxZC7eEg972ZAQTC3ZCZBQhLyUZCXjrQqbtedaTawGv7LOYQif7c1DU9z891mOZCMMgJDFI4lkVD1jgkAdqq1I1WymsNL0FBwTwiIeZCYq3CruMoFVr6drBT1JFXhPBTiG2DOdXdKWPRqUTjZCCxriQZA3Do4xEmGUiClwH2LW")
     # permalink_url=obj.get_permalink_list(str(q))
     # madia_url = obj.get_media_url_list(str(q))
     pprint.pprint(obj.get_permalink_list(str(q)))
