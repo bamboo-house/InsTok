@@ -65,14 +65,13 @@ class InstagramHashtagSearch:
 
 #     print(result1)
 
-def result(q):
-    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAFlB4CAe1JiqhqXNag4TMIKnvfv6gEdl6pMnZALRmRSlqrZAmJyoBwCSlT0CZCigCOz8OZCZA0R5VRCK1FFNjOdMokvBzXGc5BQk3pCN3OPSajZBKnvgAZCyLrZCvi7UpLttRIQcbWz3mdFWBBwJHytb0nnCqlav7TfVUt63ghAZA4vrpET8D5cgZD")
+def get_instagram(q):
+    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAKbdjvAU4buqK4mb89JLkEpPgYITqvFnZADweDudp3ERZAjohZAuDddEDzsQEEUB4QaESTz9EMGOugi8n9zDjntzZAtPg3wXQnnt8tubZBXdhu4Sq6uIkKcN3BoCsvbfn5DwyorCeqkzEmEDnIHckCiozHcttaaNMXPraOmdFXahGnIphZBhIZD")
     # permalink_url=obj.get_permalink_list(str(q))
     # madia_url = obj.get_media_url_list(str(q))
-    # pprint.pprint(obj.get_permalink_list(str(q)))
+    pprint.pprint(obj.get_permalink_list(str(q)))
 
-    with open('../instagram_data.json', mode='wt', encoding='utf-8') as file:
-        json.dump(obj.get_permalink_list(str(q)), file, ensure_ascii=False, indent=4)
+    json.dumps(obj.get_permalink_list(str(q)), ensure_ascii=False, indent=4)
 
 
     # res=obj.__seach_hashtag(str(q))
@@ -91,4 +90,4 @@ def result(q):
 
 
 
-result("カフェ")
+get_instagram("本田翼")
