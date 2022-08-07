@@ -1,21 +1,19 @@
 import './App.css';
-import { Grid, TextField, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { Grid } from '@material-ui/core';
 import Header from './components/Header';
 import Content from './components/Content';
 import PostContent from './components/PostContent'
 import About from './components/About';
+import SearchForm from './components/SearchForm';
+import TabList from './components/TabList';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Search from '@material-ui/icons/Search';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles ({
   form_margin: {
-    margin: '20px 20px',
+    margin: '20px 0px',
+    align: 'center'
   },
-  margin: {
-    margin: '5.5px 0 0 15px',
-  }
 });
 
 function App() {
@@ -27,14 +25,11 @@ function App() {
       </Grid>
 
       <Grid container>
-        <Grid item xs={5}/>
-        <Grid item xs={2} className={classes.form_margin}>
-          <form>
-            <TextField id="outlined-basic" label="Search" variant="outlined" />
-            <Button variant="contained" color="primary" endIcon={<Search/>} size="large" className={classes.margin} >検索</Button>
-          </form>
+        <Grid item xs={4}/>
+        <Grid item xs={4} className={classes.form_margin}>
+          <SearchForm />
         </Grid>
-        <Grid item xs={5}/>
+        <Grid item xs={4}/>
       </Grid>
 
       <Grid container>
@@ -42,13 +37,13 @@ function App() {
         <Grid item xs={12} sm={8}>
           <Router>
             <Routes>
-              <Route path="/" element={<Content />} />
+              <Route path="/" element={<TabList />} />
               <Route path="/post/:id" element={<PostContent />} />
               <Route path="/about" element={<About />} />
             </Routes>
           </Router>
         </Grid>
-        <Grid item sm={2}/>
+        <Grid item sm={1}/>
       </Grid>
 
     </Grid>
