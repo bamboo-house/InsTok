@@ -14,14 +14,15 @@ import json
 
 
 @api_view(["GET"])
-def tiktok_api(resuest):
+def tiktok_api(request):
   data = tiktokapi.get_tiktok("淡路島")
   print(data)
   # j2p_data = json.loads(data)
   return Response(data, status=status.HTTP_201_CREATED)
 
 @api_view(["GET"])
-def instagram_api(resuest):
+def instagram_api(request):
+  # query = request.request.GET.get('query')
   data = instagramapi.get_instagram("本田翼")
   j2p_data = json.loads(data)
   return Response(j2p_data, status=status.HTTP_201_CREATED)

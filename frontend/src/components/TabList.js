@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TabList() {
+export default function TabList(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -84,10 +84,10 @@ export default function TabList() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <Content />
+          <Content post={props.post}/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <Content />
+          <Content post={props.post}/>
         </TabPanel>
       </SwipeableViews>
     </div>

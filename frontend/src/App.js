@@ -7,6 +7,9 @@ import SearchForm from './components/SearchForm';
 import TabList from './components/TabList';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+
 
 const useStyles = makeStyles ({
   form_margin: {
@@ -16,6 +19,15 @@ const useStyles = makeStyles ({
 });
 
 function App() {
+  const [post, setPosts] = useState([])
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/instagram_api/')
+    .then(res => {
+      setPosts(res.data)
+    })
+  }, [])
+
   const classes = useStyles();
   return (
     <Grid container direction="column">
@@ -36,7 +48,7 @@ function App() {
         <Grid item xs={12} sm={8}>
           <Router>
             <Routes>
-              <Route path="/" element={<TabList />} />
+              <Route path="/" element={<TabList post={post}/>} />
               <Route path="/post/:id" element={<PostContent />} />
               <Route path="/about" element={<About />} />
             </Routes>

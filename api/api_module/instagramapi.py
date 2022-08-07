@@ -58,36 +58,8 @@ class InstagramHashtagSearch:
         response = requests.get(url)
         return json.loads(response.text)["data"]
 
-# if __name__ == '__main__':
-#     obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAB3MQHh9nGIroGZBZBKxS2ZCyNyiBoKetysVqnBmXzYnukNgLHkBOvkCNik8yXNjheU9mo9lckUC2Fsm9BUgOAkZAchXslN67dfYfxoUqFxtv7oiYDyqcwQGANcoYpCnwMtwkX3WLBtvMbOZC9BZBsZCZCAZBuBKPvJWoo7kZAgTf15GCKyIH9v0gZD")
-#     result1=obj.get_permalink_list("マキアート")
-#     result = obj.get_media_url_list("マキアート")
-
-#     print(result1)
-
 def get_instagram(q):
-    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAADxdpVZBvA7J6AaYm7JADsBqHTEpNADSehMkE8tKcMjnERebFEmdpiqz2TzXmBZCX0U0QNgS8gJkniinZCZCGtqwWzTqNocmFZAA6lpXDZB6hhsG1yoA07JJNee5z6ZBfzLAnFULgd58CVVihymHglMxSDAXZCJOeLcbdT6ykYhD0AdPaZBddFvfPAifhzSq5WZAjUmENnXZBn")
-    # permalink_url=obj.get_permalink_list(str(q))
-    # madia_url = obj.get_media_url_list(str(q))
+    obj = InstagramHashtagSearch("17841454148257811","EAAuPmMzVoBsBAOb5sP1TZAPaXVRVZBCXjGlD5VNcGnYmOROZAQdwtnerB5zNM5ei6SJVyZCe2tugFB7WQtcCMGGjhEb0c6vdccy0SpErSaZAPMZBeZBM0cajkcrAKscdSRqIEaJYTRhvKLOY4Q5ouf5kqm1fVetiFBhLp03qQ0dNM7TmviznUsnLQOFRFYj4kcdYESMc6EIhTjTZCVApproQNl99cIBqZCAq0b7zoP7CXSOrwpGuJ4tXUc0YvtsXYsOEZD")
     pprint.pprint(obj.get_permalink_list(str(q)))
 
     return json.dumps(obj.get_permalink_list(str(q)), ensure_ascii=False, indent=4)
-
-
-    # res=obj.__seach_hashtag(str(q))
-    # print(res)
-
-    # hosiijson=obj.__request_url(obj.hashtag_search_url)
-    # print(hosiijson)
-
-
-
-    # pprint.pprint(permalink_url)
-    # pprint.pprint(madia_url)
-    # print(len(permalink_url))
-    # print(len(madia_url))
-
-
-
-
-# get_instagram("本田翼")

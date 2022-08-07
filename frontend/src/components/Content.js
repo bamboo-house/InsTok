@@ -7,26 +7,17 @@ const cardContent = {
   avatarUrl: "https://joeschmoe.io/api/v1/random",
 }
 
-function Content() {
-  const [post, setPosts] = useState([])
+const getCardContent = getObj => {
+  const bodyCardContent = {...getObj, ...cardContent};
+  return (
+    <Grid item xs={12} sm={4} key={getObj.id}>
+      <BodyCard {...bodyCardContent} />
+    </Grid>
+  );
+};
 
-  useEffect(() => {
-    // axios.get('https://jsonplaceholder.typicode.com/posts')
-    axios.get('http://127.0.0.1:8000/api/instagram_api/')
-    .then(res => {
-      setPosts(res.data)
-    })
-  }, [])
-
-  const getCardContent = getObj => {
-    const bodyCardContent = {...getObj, ...cardContent};
-    return (
-      <Grid item xs={12} sm={4} key={getObj.id}>
-        <BodyCard {...bodyCardContent} />
-      </Grid>
-    );
-  };
-
+function Content(props) {
+  const post = props.post
   return (
     <Grid container spacing={2}>
       {post.map(contentObj => getCardContent(contentObj))}
