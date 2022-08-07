@@ -14,7 +14,7 @@ function Header() {
     <AppBar position='static'>
       <Toolbar>
         <Typography className={classes.typographyStyles}>
-          Anthony sistilli
+          TikGram
         </Typography>
         <EcoIcon/>
       </Toolbar>
