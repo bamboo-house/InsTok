@@ -1,32 +1,3 @@
-// import React from 'react';
-// import { Paper, Tabs, Tab } from '@material-ui/core';
-
-
-// function TabList() {
-//   const [value, setValue] = React.useState(0);
-
-//   const handleChange = (event, newValue) => {
-//     setValue(newValue);
-//   };
-
-//   return (
-//     <Paper square>
-//       <Tabs
-//         value={value}
-//         indicatorColor="primary"
-//         textColor="primary"
-//         onChange={handleChange}
-//         centered
-//         >
-//         <Tab label="Active">Item One</Tab>
-//         <Tab label="Active">Item Two</Tab>
-//       </Tabs>
-//     </Paper>
-//   );
-// }
-
-// export default TabList
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';

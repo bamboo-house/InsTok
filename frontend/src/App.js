@@ -1,7 +1,6 @@
 import './App.css';
 import { Grid } from '@material-ui/core';
 import Header from './components/Header';
-import Content from './components/Content';
 import PostContent from './components/PostContent'
 import About from './components/About';
 import SearchForm from './components/SearchForm';
