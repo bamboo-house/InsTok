@@ -12,7 +12,8 @@ function Content() {
   const [post, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    // axios.get('https://jsonplaceholder.typicode.com/posts')
+    axios.get('http://127.0.0.1:8000/api/tiktok_api/')
     .then(res => {
       setPosts(res.data)
     })
