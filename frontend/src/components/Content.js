@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const cardContent = {
   avatarUrl: "https://joeschmoe.io/api/v1/random",
-  imageUrl: "https://picsum.photos/150"
 }
 
 function Content() {
@@ -13,7 +12,7 @@ function Content() {
 
   useEffect(() => {
     // axios.get('https://jsonplaceholder.typicode.com/posts')
-    axios.get('http://127.0.0.1:8000/api/tiktok_api/')
+    axios.get('http://127.0.0.1:8000/api/instagram_api/')
     .then(res => {
       setPosts(res.data)
     })

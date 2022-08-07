@@ -25,7 +25,7 @@ class InstagramHashtagSearch:
             id = b[i]['id']
             permalink = b[i]['permalink']
             media_url = b[i]['media_url']
-            dct = {"id":id, "permalink":permalink, "media_url":media_url}
+            dct = {"id":id, "url":permalink, "thumbnail":media_url}
             datelist.append(dct)
         return(datelist)
 
@@ -66,12 +66,12 @@ class InstagramHashtagSearch:
 #     print(result1)
 
 def get_instagram(q):
-    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAJ9euZBEglGXm3ELZCDt1FOYYNNmWY5gGE9S1OI5swUbWkZANQrnBS1LLcbvx5gOvS0xubCTkaUJMYKAcn8xnLAZBnq5pPmsVGUIB4PbgdsmCiZCKFiCaGCW5SgQZCrwoCfDjRiriqPVRXVnAH1XRcO6hdX7O10HtonE7OtADZBriau3B5z78UZD")
+    obj = InstagramHashtagSearch("17841454148257811","EAARn5vWZBORsBAADxdpVZBvA7J6AaYm7JADsBqHTEpNADSehMkE8tKcMjnERebFEmdpiqz2TzXmBZCX0U0QNgS8gJkniinZCZCGtqwWzTqNocmFZAA6lpXDZB6hhsG1yoA07JJNee5z6ZBfzLAnFULgd58CVVihymHglMxSDAXZCJOeLcbdT6ykYhD0AdPaZBddFvfPAifhzSq5WZAjUmENnXZBn")
     # permalink_url=obj.get_permalink_list(str(q))
     # madia_url = obj.get_media_url_list(str(q))
     pprint.pprint(obj.get_permalink_list(str(q)))
 
-    json.dumps(obj.get_permalink_list(str(q)), ensure_ascii=False, indent=4)
+    return json.dumps(obj.get_permalink_list(str(q)), ensure_ascii=False, indent=4)
 
 
     # res=obj.__seach_hashtag(str(q))
@@ -90,4 +90,4 @@ def get_instagram(q):
 
 
 
-get_instagram("本田翼")
+# get_instagram("本田翼")

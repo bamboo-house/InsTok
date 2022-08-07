@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 
 
 function BodyCard(props) {
-  const { userId, id, title, body, avatarUrl, imageUrl } = props;
+  const { userId, id, url, thumbnail, avatarUrl} = props;
   const classes = useStyles();
   return (
       <Card variant="outlined">
@@ -44,18 +44,16 @@ function BodyCard(props) {
               <StarBorderOutlinedIcon />
             </IconButton>
           }
-          title={title}
           className={classes.cHeader}
         />
       
-      <CardMedia style={{ height: "150px" }} image={imageUrl} />
+      <CardMedia style={{ height: "300px" }} image={thumbnail} />
       <CardContent className={classes.cCOntent}>
         <Typography variant="body2" component="p">
-          {body}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href={`/post/${id}`}>詳細をみる</Button>
+        <Button size="small" href={url}>詳細をみる</Button>
       </CardActions>
     </Card>
   );

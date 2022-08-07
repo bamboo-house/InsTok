@@ -2,43 +2,26 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from api.api_module import instagramapi
+from api.api_module import tiktokapi
+
+# import requests
+# import pprint
+import json
+
+# from TikTokApi import TikTokApi
+# import json
+
 
 @api_view(["GET"])
 def tiktok_api(resuest):
-  data = [
-    {
-      "id": 1,
-      "title": "タイトル１タイトル１",
-      "body": "ボディ１ボディ１ボディ１ボディ１"
-    },
-    {
-      "id": 2,
-      "title": "タイトル２タイトル２タイトル２",
-      "body": "ボディ２ボディ２ボディ２ボディ２"
-    },
-    {
-      "id": 3,
-      "title": "タイトル3タイトル3タイトル3",
-      "body": "ボディ3ボディ3ボディ3ボディ3"
-    }
-  ]
-  # target_keyword = request.keyword
-  # tiktok_json = get_tiktok(target_keyword)
-  # return Response(tiktok_json, status=status.HTTP_201_CREATED)
+  data = tiktokapi.get_tiktok("淡路島")
+  print(data)
+  # j2p_data = json.loads(data)
   return Response(data, status=status.HTTP_201_CREATED)
 
 @api_view(["GET"])
 def instagram_api(resuest):
-  data = [
-    {
-      "id": 1,
-      "title": "タイトル１タイトル１",
-      "body": "ボディ１ボディ１ボディ１ボディ１"
-    },
-    {
-      "id": 2,
-      "title": "タイトル２タイトル２タイトル２",
-      "body": "ボディ２ボディ２ボディ２ボディ２"
-    }
-  ]
-  return Response(data, status=status.HTTP_201_CREATED)
+  data = instagramapi.get_instagram("本田翼")
+  j2p_data = json.loads(data)
+  return Response(j2p_data, status=status.HTTP_201_CREATED)
