@@ -26,8 +26,8 @@ const useStyles = makeStyles({
       }
     },
     cContent: {
-        height: '200px',
-        overflow: 'hidden'
+      height: '200px',
+      overflow: 'hidden'
     }
 });
 
