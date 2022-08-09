@@ -3,12 +3,15 @@ import { Grid } from '@material-ui/core';
 import Header from './components/Header';
 import PostContent from './components/PostContent'
 import About from './components/About';
-import SearchForm from './components/SearchForm';
 import TabList from './components/TabList';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { TextField, Button } from '@material-ui/core';
+import Search from '@material-ui/icons/Search';
+
 
 
 const useStyles = makeStyles ({
@@ -16,19 +19,27 @@ const useStyles = makeStyles ({
     margin: '20px 0px',
     align: 'center'
   },
+
+  margin: {
+    margin: '5.5px 0 0 12px',
+  },
 });
+
+let renderCount = 0;
 
 function App() {
   const [post, setPosts] = useState([])
+  const classes = useStyles();
+  const { register, handleSubmit } = useForm();
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/instagram_api/')
+  const onSubmitt = (word, e) => {
+    axios.get("http://127.0.0.1:8000/api/tiktok_api/" + word.word)
     .then(res => {
       setPosts(res.data)
-    })
-  }, [])
+    });
+    e.preventDefault();
+  }
 
-  const classes = useStyles();
   return (
     <Grid container direction="column">
       <Grid item>
@@ -38,7 +49,10 @@ function App() {
       <Grid container>
         <Grid item xs={4}/>
         <Grid item xs={4} className={classes.form_margin}>
-          <SearchForm />
+          <form onSubmit={handleSubmit(onSubmitt)}>
+            <TextField id="outlined-basic" label="Search" variant="outlined" {...register("word")} />
+            <Button variant="contained" type='sumbit' color="primary" endIcon={<Search/>} size="large" className={classes.margin} >検索</Button>
+          </form> 
         </Grid>
         <Grid item xs={4}/>
       </Grid>
